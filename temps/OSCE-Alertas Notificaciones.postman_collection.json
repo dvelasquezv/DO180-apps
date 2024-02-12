@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "f1a6cc85-708e-4a56-aae5-244b8a6f7248",
+		"name": "OSCE-Alertas Notificaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "2750388"
+	},
+	"item": [
+		{
+			"name": "/api/v1/notificacion/envia_sms_sc_ce - Validacion campos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cCodPrefPais\": \"P\",\r\n  \"nIdOperador\": null,\r\n  \"nNumContacto\": \"555-1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/notificacion/envia_sms_sc_ce"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/notificacion/envia_sms_sc_ce - Validacion campos 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cCodPrefPais\": \"COL\",\r\n  \"nIdOperador\": 999999999999,\r\n  \"nNumContacto\": \"555-1234-123123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/notificacion/envia_sms_sc_ce"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/notificacion/envia_sms_sc_ce - ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cCodPrefPais\": \"PE\",\r\n  \"nIdOperador\": 9999,\r\n  \"nNumContacto\": \"555-1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/notificacion/envia_sms_sc_ce"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/notificacion/envia_email_sc_ce - ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"cDesCorreo\": \"jperez@gmail.com\",\r\n\t\"cAsunto\": \"Notificacion Tramite\",\r\n\t\"cDescripcionEmail\": \"Se notifica aprobacion de tramite 001\",\r\n\t\"cArchivoAdj1\": \"\",\r\n\t\"cArchivoAdj2\": \"Adjunto 02\",\r\n\t\"cArchivoAdj3\": \"Adjunto 03\",\r\n\t\"cArchivoAdj4\": \"Adjunto 04\",\r\n\t\"cArchivoAdj5\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/notificacion/envia_email_sc_ce"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/notificacion/envia_email_sc_ce - Validacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"cDesCorreo\": \"jperez@.com\",\r\n\t\"cAsunto\": \"Notificacion Tramite ...................................................................................................................................................................................................................................................................................................................\",\r\n\t\"cDescripcionEmail\": \"\",\r\n\t\"cArchivoAdj1\": \"\",\r\n\t\"cArchivoAdj2\": \"Adjunto 02\",\r\n\t\"cArchivoAdj3\": \"Adjunto 03\",\r\n\t\"cArchivoAdj4\": \"Adjunto 04\",\r\n\t\"cArchivoAdj5\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/notificacion/envia_email_sc_ce"
+			},
+			"response": []
+		}
+	]
+}
